@@ -1,7 +1,7 @@
 ﻿namespace C44_G03_OOP06
 {
     #region V05
-    internal class Employee : ICloneable
+    internal class Employee : ICloneable, IComparable<Employee>
     {
         public int Id { get; set; }
         public string? Name { get; set; }
@@ -35,7 +35,30 @@
             return $"Id = {Id} , Name = {Name} , Salary = {Salary:c}";
         }
 
-       
+        #region V06
+        public int CompareTo(Employee? other)
+        {
+            // Emp01.CompareTo(other)
+            // 1  => This.Salary > other.Salary
+            // -1 => This.Salary < other.Salary
+            // 0
+
+            //if (this.Salary > other?.Salary)
+            //    return 1;
+            //else if (this.Salary < other?.Salary)
+            //    return -1;
+            //else
+            //    return 0;
+
+            return this.Salary.CompareTo(other?.Salary);
+        }
+
+        //public int CompareTo(object? obj)
+        //{
+        //    throw new NotImplementedException();
+        //} 
+        #endregion
+
     }
     #endregion
     internal class Program
@@ -260,6 +283,39 @@
             //Console.WriteLine($"employee02 => {employee02.GetHashCode()}");
 
             #endregion
+
+            #endregion
+
+            #endregion
+
+            #region V06
+
+            #region Built-in Interfaces
+
+            //int[] numbers = { 4, 5, 6, 9, 1, 2, 8, 5, 7 };
+
+            //Array.Sort(numbers);
+            //// Array => Built in Class implement interface [ICloneable] => Clone
+            //foreach (int number in numbers)
+            //{
+            //    Console.WriteLine(number);
+            //}
+
+            //Employee[] employees =
+            //{
+            //    new Employee(){Id = 10, Name = "Omar", Salary = 6000},
+            //    new Employee(){Id = 20, Name = "Ahmed", Salary = 10000},
+            //    new Employee(){Id = 30, Name = "Sama", Salary = 4000},
+            //    new Employee(){Id = 40, Name = "May", Salary = 5000},
+            //};
+
+            //Array.Sort(employees);
+            //Array.Reverse(employees);
+            //foreach (Employee employee in employees)
+            //{
+            //    Console.WriteLine(employee);
+            //}
+            // InvalidOperationException
 
             #endregion
 
