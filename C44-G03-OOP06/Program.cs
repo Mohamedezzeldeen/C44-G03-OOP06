@@ -1,5 +1,43 @@
 ﻿namespace C44_G03_OOP06
 {
+    #region V05
+    internal class Employee : ICloneable
+    {
+        public int Id { get; set; }
+        public string? Name { get; set; }
+        public decimal Salary { get; set; }
+
+        public Employee(Employee employee)
+        {
+            Id = employee.Id;
+            Name = employee.Name;
+            Salary = employee.Salary;
+        }
+
+        public Employee()
+        {
+
+        }
+
+        public object Clone()
+        {
+            return new Employee(this);
+            //return new Employee 
+            //{
+            //    Id = this.Id, 
+            //    Name = this.Name, 
+            //    Salary = this.Salary 
+            //};
+        }
+
+        public override string ToString()
+        {
+            return $"Id = {Id} , Name = {Name} , Salary = {Salary:c}";
+        }
+
+       
+    }
+    #endregion
     internal class Program
     {
         static void Main(string[] args)
@@ -184,7 +222,44 @@
 
             #endregion
 
-            #endregion  
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region V05
+
+            #region Built-in Interfaces
+
+            #region Icloneable
+
+            //Employee employee01 = new Employee() { Id = 10, Name = "Omar", Salary = 5000 };
+            //Employee employee02 = new Employee() { Id = 20, Name = "Mona", Salary = 8000 };
+            //Console.WriteLine(employee01);
+            //Console.WriteLine($"employee01 => {employee01.GetHashCode()}");
+            //Console.WriteLine(employee02);
+            //Console.WriteLine($"employee02 => {employee02.GetHashCode()}");
+            //// Array => Built in Class implement interface [ICloneable] => Clone
+
+            ////employee02 = (Employee)employee01.Clone();
+
+            ////employee02 = new Employee() 
+            ////{
+            ////    Id = employee01.Id,
+            ////    Name = employee01.Name,
+            ////    Salary = employee01.Salary
+            ////};
+
+            //employee02 = new Employee(employee01);
+
+            //Console.WriteLine("After Deep Copy");
+            //Console.WriteLine(employee01);
+            //Console.WriteLine($"employee01 => {employee01.GetHashCode()}");
+            //Console.WriteLine(employee02);
+            //Console.WriteLine($"employee02 => {employee02.GetHashCode()}");
+
+            #endregion
 
             #endregion
 
