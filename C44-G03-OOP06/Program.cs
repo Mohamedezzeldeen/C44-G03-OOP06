@@ -134,6 +134,116 @@
     //}
 
     #endregion
+
+    #region Third Project
+
+    #region Part 1
+
+    //public abstract class Discount
+    //{
+    //    public string? Name { get; set; }
+
+    //    public abstract decimal CalculateDiscount(decimal price, int quantity);
+    //}
+
+    #endregion
+
+    #region Part 2: Specific Discounts
+    //public class PercentageDiscount : Discount
+    //{
+    //    public decimal Percentage { get; set; }
+
+    //    public PercentageDiscount(decimal percentage)
+    //    {
+    //        Name = "Percentage Discount";
+    //        Percentage = percentage;
+    //    }
+
+    //    public override decimal CalculateDiscount(decimal price, int quantity)
+    //    {
+    //        return price * quantity * (Percentage / 100);
+    //    }
+    //}
+
+    //public class FlatDiscount : Discount
+    //{
+    //    public decimal FlatAmount { get; set; }
+
+    //    public FlatDiscount(decimal flatAmount)
+    //    {
+    //        Name = "Flat Discount";
+    //        FlatAmount = flatAmount;
+    //    }
+
+    //    public override decimal CalculateDiscount(decimal price, int quantity)
+    //    {
+    //        return FlatAmount * Math.Min(quantity, 1);
+    //    }
+    //}
+
+    //public class BuyOneGetOneDiscount : Discount
+    //{
+    //    public BuyOneGetOneDiscount()
+    //    {
+    //        Name = "Buy One Get One Discount";
+    //    }
+
+    //    public override decimal CalculateDiscount(decimal price, int quantity)
+    //    {
+    //        if (quantity > 1)
+    //        {
+    //            return (price / 2) * (quantity / 2);
+    //        }
+    //        return 0;
+    //    }
+    //}
+    #endregion
+
+    #region Part 3: Discount Applicability
+    //public abstract class User
+    //{
+    //    public string Name { get; set; }
+
+    //    public User(string name)
+    //    {
+    //        Name = name;
+    //    }
+
+    //    public abstract Discount GetDiscount();
+    //}
+
+    //public class RegularUser : User
+    //{
+    //    public RegularUser(string name) : base(name) { }
+
+    //    public override Discount GetDiscount()
+    //    {
+    //        return new PercentageDiscount(5);
+    //    }
+    //}
+
+    //public class PremiumUser : User
+    //{
+    //    public PremiumUser(string name) : base(name) { }
+
+    //    public override Discount GetDiscount()
+    //    {
+    //        return new FlatDiscount(100);
+    //    }
+    //}
+
+    //public class GuestUser : User
+    //{
+    //    public GuestUser(string name) : base(name) { }
+
+    //    public override Discount GetDiscount()
+    //    {
+    //        return null;
+    //    }
+    //}
+    #endregion
+
+    #endregion
     internal class Program
     {
         static void Main(string[] args)
@@ -202,6 +312,62 @@
             //Console.WriteLine($"Subtract: {Maths.Subtract(10, 5)}");
             //Console.WriteLine($"Multiply: {Maths.Multiply(10, 5)}");
             //Console.WriteLine($"Divide: {Maths.Divide(10, 0)}");
+
+            #endregion
+
+            #region Third Project
+
+            #region Part 4
+
+            //Console.Write("Enter your user type (Regular, Premium, Guest): ");
+            //string userType = Console.ReadLine().Trim().ToLower();
+
+            //Console.Write("Enter your name: ");
+            //string name = Console.ReadLine();
+
+            //User user;
+            //switch (userType)
+            //{
+            //    case "regular":
+            //        user = new RegularUser(name);
+            //        break;
+            //    case "premium":
+            //        user = new PremiumUser(name);
+            //        break;
+            //    case "guest":
+            //        user = new GuestUser(name);
+            //        break;
+            //    default:
+            //        Console.WriteLine("Invalid user type. Defaulting to Guest.");
+            //        user = new GuestUser(name);
+            //        break;
+            //}
+
+            //Console.Write("Enter product price: ");
+            //decimal price = decimal.Parse(Console.ReadLine());
+
+            //Console.Write("Enter product quantity: ");
+            //int quantity = int.Parse(Console.ReadLine());
+
+            //Discount discount = user.GetDiscount();
+
+            //decimal discountAmount = 0;
+            //if (discount != null)
+            //{
+            //    discountAmount = discount.CalculateDiscount(price, quantity);
+            //    Console.WriteLine($"Discount Type: {discount.Name}");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("No discount applied.");
+            //}
+
+            //decimal finalPrice = (price * quantity) - discountAmount;
+
+            //Console.WriteLine($"Total Discount: {discountAmount:C}");
+            //Console.WriteLine($"Final Price: {finalPrice:C}");
+
+            #endregion
 
             #endregion
         }
