@@ -61,6 +61,18 @@
 
     }
     #endregion
+
+    #region V07
+
+    internal class EmployeeNameComparer : IComparer<Employee>
+    {
+        public int Compare(Employee? x, Employee? y)
+        {
+            return string.Compare(x?.Name, y?.Name);
+        }
+    }
+
+    #endregion
     internal class Program
     {
         static void Main(string[] args)
@@ -316,6 +328,29 @@
             //    Console.WriteLine(employee);
             //}
             // InvalidOperationException
+
+            #endregion
+
+            #endregion
+
+            #region V07
+
+            #region Icomparer
+
+            //Employee[] employees =
+            //{
+            //    new Employee(){Id = 10, Name = "Omar", Salary = 6000},
+            //    new Employee(){Id = 20, Name = "Ahmed", Salary = 10000},
+            //    new Employee(){Id = 30, Name = "Sama", Salary = 4000},
+            //    new Employee(){Id = 40, Name = "May", Salary = 5000},
+            //};
+
+            //Array.Sort(employees, new EmployeeNameComparer());
+
+            //foreach (Employee employee in employees)
+            //{
+            //    Console.WriteLine(employee);
+            //}
 
             #endregion
 
