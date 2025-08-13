@@ -73,8 +73,99 @@
     }
 
     #endregion
+
+    #region V08 : Abstraction
+    internal abstract class Shape
+    {
+        protected Shape(decimal D01, decimal D02)
+        {
+            Dim01 = D01;
+            Dim02 = D02;
+        }
+        public decimal Dim01 { get; set; }
+        public decimal Dim02 { get; set; }
+
+        public abstract decimal CalcArea();
+        public abstract decimal Perimeter { get; }
+    }
+
+    // Class : Class => Inhertence
+    // Class : Interface => Implement
+    // Struct : Interface => Implement
+    // Class : abstruct Class => Implement , Inhertence
+
+    //Concreate Class
+
+    abstract class RefBase : Shape
+    {
+        protected RefBase(decimal D01, decimal D02) : base(D01, D02)
+        {
+
+        }
+        public override decimal CalcArea()
+        {
+            return Dim01 * Dim02;
+        }
+    }
+
+    class Rectangle : RefBase
+    {
+        public Rectangle(decimal D01, decimal D02) : base(D01, D02)
+        {
+
+        }
+        public override decimal Perimeter
+        {
+            get { return Dim01 * Dim02 * 2; }
+        }
+
+    }
+
+    class Square : RefBase
+    {
+        public Square(decimal side) : base(side, side)
+        {
+        }
+
+        public override decimal Perimeter
+        {
+            get { return Dim01 * 4; }
+        }
+
+    }
+
+    class Circle : Shape
+    {
+        public Circle(decimal Reduis) : base(Reduis, Reduis)
+        {
+        }
+
+        public override decimal Perimeter
+        {
+            //get { return 2 * Dim01 * 3.14M; }
+            get { return 2 * Dim01 * (decimal)Math.PI; }
+        }
+
+        public override decimal CalcArea()
+        {
+            return 3.14M * Dim01 * Dim02;
+        }
+
+    }
+
+    #endregion
     internal class Program
     {
+        #region V08
+        static void ProcessShape(Shape shape)
+        {
+            if (shape is not null)
+            {
+                Console.WriteLine(shape.CalcArea());
+                Console.WriteLine(shape.Perimeter);
+            }
+        }
+        #endregion
         static void Main(string[] args)
         {
             #region V01
@@ -351,6 +442,18 @@
             //{
             //    Console.WriteLine(employee);
             //}
+
+            #endregion
+
+            #endregion
+
+            #region V08
+
+            #region Abstraction
+
+            //Shap shap = new Shap(); // Invalid
+            //Rectangle rectangle = new Rectangle(10,20);
+            //ProcessShape(rectangle);
 
             #endregion
 
