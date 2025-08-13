@@ -122,6 +122,73 @@
             #endregion
 
             #endregion
+
+            #region V03
+
+            #region Shallow Copy and Deep Copy
+
+            #region Array Of Reference Type [Stringbuilder]
+
+            //StringBuilder[] names01 = new StringBuilder[1];
+            //names01[0] = new StringBuilder();
+            // null => Omar
+            //StringBuilder stringBuilder = new StringBuilder();
+            //stringBuilder.Append("Omar");
+
+            //names01[0] = "Omar";
+
+            //names01[0].Append("omar"); // NullReferenceException
+
+            //string[] names02 = new string[1];
+
+            //names02[0] = "Omar"; // Syntax Suger
+
+            //names02[0] = new string("Omar"); // كان الصح
+
+            //StringBuilder[] names01 = [new StringBuilder("Omar")];
+            //StringBuilder[] names02 = new StringBuilder[1];
+            //Console.WriteLine($"HashCode Of names01 = {names01.GetHashCode()}");
+            //Console.WriteLine($"HashCode Of names02 = {names02.GetHashCode()}");
+
+            #region Shallow Copy
+            //names02 = names01;
+            //Console.WriteLine("After Changing");
+            //Console.WriteLine($"HashCode Of names01 = {names01.GetHashCode()}");
+            //Console.WriteLine($"HashCode Of names02 = {names02.GetHashCode()}");
+
+            //Console.WriteLine($"names01[0] = {names01[0]}"); // omar
+            //Console.WriteLine($"names02[0] = {names02[0]}"); // omar
+
+            //names01[0].Append("Salma");
+            //Console.WriteLine("After Changing");
+            //Console.WriteLine($"names01[0] = {names01[0]}"); //omar Salma
+            //Console.WriteLine($"names02[0] = {names02[0]}"); //omar Salma
+
+            #endregion
+
+            #region Deep Copy
+
+            //names02 = (StringBuilder[])names01.Clone();
+            //Console.WriteLine("After Changing");
+            //Console.WriteLine($"HashCode Of names01 = {names01.GetHashCode()}");
+            //Console.WriteLine($"HashCode Of names02 = {names02.GetHashCode()}");
+
+            //Console.WriteLine($"names01[0] = {names01[0]}"); // omar
+            //Console.WriteLine($"names02[0] = {names02[0]}"); // omar
+
+            //names01[0].Append(" Salma");
+            //Console.WriteLine("After Changing");
+            //Console.WriteLine($"names01[0] = {names01[0]}");
+            //Console.WriteLine($"names02[0] = {names02[0]}");
+
+
+            #endregion
+
+            #endregion  
+
+            #endregion
+
+            #endregion
         }
     }
 }
