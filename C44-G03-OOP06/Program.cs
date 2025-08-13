@@ -67,6 +67,61 @@
             #endregion
 
             #endregion
+
+            #region V02
+
+            #region Shallow Copy and Deep Copy
+
+            #region Array Of Reference Type [string]
+
+            //string[] names01 = { "Omar", "Amr" };
+            //string[] names02 = new string[2];
+
+            //Console.WriteLine($"HashCode Of names01 = {names01.GetHashCode()}");
+            //Console.WriteLine($"HashCode Of names02 = {names02.GetHashCode()}");
+
+            #region Shallow Copy
+            //names02 = names01;   // Shallow Copy
+            //                     // Copy Value names01 => names02
+            //                     // [names01 - names02] => Have Same Value
+            //                     // [names01 - names02] => Refer to Same Object
+
+            //Console.WriteLine("After Shallow Copy ");
+            //Console.WriteLine($"HashCode Of names01 = {names01.GetHashCode()}");
+            //Console.WriteLine($"HashCode Of names02 = {names02.GetHashCode()}");
+
+            //Console.WriteLine($"names01[0] = {names01[0]}");
+            //Console.WriteLine($"names02[0] = {names02[0]}");
+
+            //names01[0] = "Salma";
+            //Console.WriteLine("After Changing");
+            //Console.WriteLine($"names01[0] = {names01[0]}");
+            //Console.WriteLine($"names02[0] = {names02[0]}"); 
+            #endregion
+
+            #region Deep Copy
+
+            //names02 = (string[])names01.Clone(); // Deep Copy
+
+            //Console.WriteLine("After Deep Copy");
+            //Console.WriteLine($"HashCode Of names01 = {names01.GetHashCode()}");
+            //Console.WriteLine($"HashCode Of names02 = {names02.GetHashCode()}");
+            //Console.WriteLine($"names01[0] = {names01[0]}"); // omar
+            //Console.WriteLine($"names02[0] = {names02[0]}"); // omar
+
+            //names01[0] = "Salma";
+            //Console.WriteLine("After Changing");
+            //Console.WriteLine($"names01[0] = {names01[0]}"); //Salma
+            //Console.WriteLine($"names02[0] = {names02[0]}"); //omar
+
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #endregion
         }
     }
 }
