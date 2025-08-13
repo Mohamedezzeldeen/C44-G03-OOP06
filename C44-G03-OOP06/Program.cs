@@ -1,0 +1,10 @@
+﻿namespace C44_G03_OOP06
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            
+        }
+    }
+}
