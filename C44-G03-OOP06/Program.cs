@@ -102,6 +102,38 @@
     //    #endregion
     //}
     #endregion
+
+    #region Second Project
+
+    //public class Maths
+    //{
+    //    public static int Add(int a, int b)
+    //    {
+    //        return a + b;
+    //    }
+
+    //    public static int Subtract(int a, int b)
+    //    {
+    //        return a - b;
+    //    }
+
+    //    public static int Multiply(int a, int b)
+    //    {
+    //        return a * b;
+    //    }
+
+    //    public static double Divide(int a, int b)
+    //    {
+    //        if (b == 0)
+    //        {
+    //            Console.WriteLine("Cannot divide by zero!");
+    //            return double.NaN;
+    //        }
+    //        return (double)a / b;
+    //    }
+    //}
+
+    #endregion
     internal class Program
     {
         static void Main(string[] args)
@@ -161,6 +193,15 @@
             //Console.Write("Cloned P1 (modified X): ");
             //Console.WriteLine(clonedP1.ToString());
             #endregion
+
+            #endregion
+
+            #region Second Project
+
+            //Console.WriteLine($"Add: {Maths.Add(10, 5)}");
+            //Console.WriteLine($"Subtract: {Maths.Subtract(10, 5)}");
+            //Console.WriteLine($"Multiply: {Maths.Multiply(10, 5)}");
+            //Console.WriteLine($"Divide: {Maths.Divide(10, 0)}");
 
             #endregion
         }
